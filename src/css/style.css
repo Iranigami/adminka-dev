@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=fallback');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Additional styles */
+@import 'additional-styles/utility-patterns.css';
+@import 'additional-styles/flatpickr.css';
+
+@import 'tailwindcss/utilities';
+
+
+/** Tile */
+.tile {
+    display: inline-block; /* Делаем плитки инлайновыми и блочными */
+    margin: 10px; /* Отступы между плитками */
+    border-radius: 10px; /* Закругление углов */
+    background-color: #f8f8f8; /* Цвет фона плиток */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для эффекта объема */
+    overflow: hidden; /* Обрезка содержимого, выступающего за пределы плитки */
+    transition: all 0.3s ease; /* Плавная анимация при наведении */
+    cursor: pointer; /* Курсор в виде руки при наведении */
+}
+
+.tile img {
+    width: 50px; /* Ширина иконки */
+    height: 50px; /* Высота иконки */
+    margin-right: 50px;
+}
+
+.tile div {
+    display: inline-block;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@layer utilities {
+    .bg-image-check {
+      @apply bg-no-repeat bg-center;
+      /* Здесь вы можете указать путь к вашему изображению */
+      background-image: url('../assets/svg/Vector.svg');
+    }
+    .bg-image-check-white {
+      @apply bg-no-repeat bg-center;
+      /* Здесь вы можете указать путь к вашему изображению */
+      background-image: url('../assets/svg/Vector2.svg');
+    }
+    .bg-image-checkered {
+      @apply bg-repeat bg-center;
+      /* Здесь вы можете указать путь к вашему изображению */
+      background-image: url('../assets/svg/checkered.svg');
+    }
+
+    .not-allowed {
+      cursor: not-allowed !important;
+ }
+  }
